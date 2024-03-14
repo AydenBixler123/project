@@ -17,6 +17,6 @@ for ele in df:
 missing_vals = df.isnull().sum()
 
 if df == 0:
-    raise ValueError("Please upload the Titanic-Dataset.csv file")
+    raise Exception("Please upload the Titanic-Dataset.csv file")
 else:
     st.write(df)
