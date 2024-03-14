@@ -16,4 +16,4 @@ try:
     st.write(df)
 
 except ValueError as ve:
-    print('You have not uploaded a file')
+    st.write("You have not uploaded a file")
