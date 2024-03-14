@@ -9,16 +9,14 @@ df = 0
 
 df = pd.read_csv(uploadedfile)
 
+df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
+
+for ele in df:
+    df.dropna(axis=0,inplace=True)
+
+missing_vals = df.isnull().sum()
+
 if df == 0:
     stl.write(raise ValueError("Please upload the Titanic-Dataset.csv file"))
 else:
-    
-    df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
-
-    for ele in df:
-        df.dropna(axis=0,inplace=True)
-
-    missing_vals = df.isnull().sum()
-
-
     st.write(df)
