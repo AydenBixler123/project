@@ -1,20 +1,19 @@
 
-try:
-    import streamlit as st
-    import pandas as pd
 
-    st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
+import streamlit as st
+import pandas as pd
 
-    uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
+st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
-    df = pd.read_csv(uploadedfile)
+uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
 
-    df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
+df = pd.read_csv(uploadedfile)
 
-    for ele in df:
-        df.dropna(axis=0,inplace=True)
+df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
 
-    st.write(df)
+for ele in df:
+    df.dropna(axis=0,inplace=True)
 
-except ValueError:
-    print("You have not uploaded a file yet")
+st.write(df)
+
+
