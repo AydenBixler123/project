@@ -16,4 +16,4 @@ try:
     st.write(df)
 
 except ValueError as ve:
-    st.write("Please insert the Titanic-Dataset.csv file")
+    print("")
