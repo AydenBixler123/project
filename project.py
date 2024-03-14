@@ -7,6 +7,10 @@ uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
 
 df = pd.read_csv(uploadedfile)
 
+if df == null:
+    raise Exception("Please upload the Titanic-Dataset.csv file")
+else:
+    
 df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
 
 for ele in df:
@@ -14,7 +18,5 @@ for ele in df:
 
 missing_vals = df.isnull().sum()
 
-if df == null:
-    st.write("Please upload the Titanic-Dataset.csv file")
-else:
+
     st.write(df)
