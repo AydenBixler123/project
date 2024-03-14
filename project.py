@@ -13,3 +13,5 @@ for ele in df:
     df.dropna(axis=0,inplace=True)
 
 missing_vals = df.isnull().sum()
+
+st.write(df)
