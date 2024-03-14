@@ -14,7 +14,7 @@ for ele in df:
 
 missing_vals = df.isnull().sum()
 
-if df = null:
+if df == null:
     st.write("Please upload the Titanic-Dataset.csv file")
 else:
     st.write(df)
