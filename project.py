@@ -11,12 +11,12 @@ if df == null:
     raise ValueError("Please upload the Titanic-Dataset.csv file")
 else:
     
-df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
+    df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
 
-for ele in df:
-    df.dropna(axis=0,inplace=True)
+    for ele in df:
+        df.dropna(axis=0,inplace=True)
 
-missing_vals = df.isnull().sum()
+    missing_vals = df.isnull().sum()
 
 
     st.write(df)
