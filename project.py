@@ -7,7 +7,7 @@ uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
 
 df = 0
 
-if df = 0:
+if df == 0:
     raise ValueError("Please upload the Titanic-Dataset.csv file")
 else:
     
