@@ -14,7 +14,8 @@ df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
 for ele in df:
     df.dropna(axis=0,inplace=True)
 
-if df == 0:
-    raise Exception("Please upload the Titanic-Dataset.csv file")
-else:
-    st.write(df)
+While true:
+    try:
+        st.write(df)
+    except ValueError:
+        st.write("Please insert the Titanic-Dataset.csv file")
