@@ -11,7 +11,7 @@ if df == 0:
     raise ValueError("Please upload the Titanic-Dataset.csv file")
 else:
     
-df = pd.read_csv(uploadedfile)
+    df = pd.read_csv(uploadedfile)
     
     df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
 
