@@ -7,11 +7,11 @@ uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
 
 df = 0
 
+df = pd.read_csv(uploadedfile)
+
 if df == 0:
     raise Exception("Please upload the Titanic-Dataset.csv file")
 else:
-    
-    df = pd.read_csv(uploadedfile)
     
     df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
 
