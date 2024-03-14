@@ -1,5 +1,3 @@
-
-
 import streamlit as st
 import pandas as pd
 
@@ -15,5 +13,3 @@ for ele in df:
     df.dropna(axis=0,inplace=True)
 
 st.write(df)
-
-
