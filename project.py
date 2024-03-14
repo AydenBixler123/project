@@ -14,8 +14,6 @@ df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
 for ele in df:
     df.dropna(axis=0,inplace=True)
 
-missing_vals = df.isnull().sum()
-
 if df == 0:
     raise Exception("Please upload the Titanic-Dataset.csv file")
 else:
