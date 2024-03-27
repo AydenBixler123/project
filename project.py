@@ -1,16 +1,16 @@
-import streamlit as st
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.feature_selection import VarianceThreshold
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import Normalizer, StandardScaler, MinMaxScaler, PowerTransformer, MaxAbsScaler, LabelEncoder
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.ensemble import BaggingClassifier
-from sklearn.tree import DecisionTreeClassifier
-
 try:
 
+    import streamlit as st
+    import pandas as pd
+    from sklearn.model_selection import train_test_split
+    from sklearn.neighbors import KNeighborsClassifier
+    from sklearn.feature_selection import VarianceThreshold
+    from sklearn.pipeline import Pipeline
+    from sklearn.preprocessing import Normalizer, StandardScaler, MinMaxScaler, PowerTransformer, MaxAbsScaler, LabelEncoder
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.ensemble import BaggingClassifier
+    from sklearn.tree import DecisionTreeClassifier
+    
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
     
     st.link_button("Please download the Titanic-Dataset.csv file", www.kaggle.com/datasets/yasserh/titanic-dataset) 
