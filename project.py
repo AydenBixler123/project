@@ -12,7 +12,7 @@ try:
 
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
     
-    
+    st.link_button("Please download the Titanic-Dataset.csv file", www.kaggle.com/datasets/yasserh/titanic-dataset) 
     uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
 
     df = pd.read_csv(uploadedfile)
