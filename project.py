@@ -1,7 +1,5 @@
-try:
-    import streamlit as st
+import streamlit as st
     import pandas as pd
-    import sklearn as skl
     from sklearn.model_selection import train_test_split
     from sklearn.neighbors import KNeighborsClassifier
     from sklearn.feature_selection import VarianceThreshold
@@ -10,6 +8,8 @@ try:
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.ensemble import BaggingClassifier
     from sklearn.tree import DecisionTreeClassifier
+
+try:
 
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
     
