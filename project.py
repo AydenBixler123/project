@@ -2,7 +2,7 @@ try:
     import streamlit as st
     import pandas as pd
 
-    st.title("CIS 335 Project By: Ayden Bixler and Mattthew Janatello")
+    st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
     uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
 
