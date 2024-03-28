@@ -38,7 +38,7 @@ try:
             ("No Normalization", "Min Max Normalization", "Z-Score")
 
         classifier = st.selectbox(
-            "What Classification Method would you like to use?"
+            "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")
     )
 
