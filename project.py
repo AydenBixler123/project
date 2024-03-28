@@ -36,6 +36,10 @@ try:
         normalization = st.radio(
             "What Normalization Technique would you like to use?",
             ("No Normalization", "Min Max Normalization", "Z-Score")
+
+        classifier = st.selectbox(
+            "What Classification Method would you like to use?"
+            ("Decision Tree", "SVM", "Adaboost", "Random Forest")
     )
 
     if normalization == "Min Max Normalization":
@@ -45,7 +49,7 @@ try:
     else:
         x_normalized = x
 
-
+    
         
 except ValueError as ve:
     print("")
