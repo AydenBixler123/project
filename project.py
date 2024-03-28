@@ -26,6 +26,10 @@ try:
 
     st.write(df)
 
+    features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
+    
+    x = df[features]
+    y = df['Survived']
     
 
 except ValueError as ve:
