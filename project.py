@@ -35,11 +35,18 @@ try:
     with st.sidebar:
         normalization = st.radio(
             "What Normalization Technique would you like to use?",
-            (":rainbow[No Normalization]", ":rainbow[Min Max Normalization]", ":rainbow[Z-Score]")
+            ("No Normalization", "Min Max Normalization", "Z-Score")
     )
 
-    
-    
+    if normalization == "Min Max Normalization":
+        x_normalized = MinMaxScaler().fit_transform(x)
+    elif normalization == "Z-Score":
+        x_normalized = StandardScaler().fit_transform(x)
+    else:
+        x_normalized = x
+
+
+        
 except ValueError as ve:
     print("")
 
