@@ -26,14 +26,14 @@ try:
 
     st.write(df)
     
+    features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
+    
+    x = df[features]
+    y = df['Survived']
+    
 except ValueError as ve:
     print("")
     
-    features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
-    
-    x = df['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
-    y = df['Survived']
-
     normalization = st.radio(
         "What Normalization Technique would you like to use?",
         [":rainbow[No Normalization]", ":rainbow[Min Max Normalization]", ":rainbow[Z-Score]"])
