@@ -25,7 +25,10 @@ try:
         df.dropna(axis=0,inplace=True)
 
     st.write(df)
-
+    
+except ValueError as ve:
+    print("")
+    
     features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
     
     x = df[features]
@@ -35,5 +38,4 @@ try:
         "What Normalization Technique would you like to use?",
         [":rainbow[No Normalization]", ":rainbow[Min Max Normalization]", ":rainbow[Z-Score]"]
 
-except ValueError as ve:
-    print("")
+
