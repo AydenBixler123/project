@@ -31,7 +31,7 @@ except ValueError as ve:
     
     features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
     
-    x = df[features]
+    x = df['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
     y = df['Survived']
 
     normalization = st.radio(
