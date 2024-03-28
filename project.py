@@ -32,9 +32,9 @@ try:
     y = df['Survived']
     
     with st.sidebar:
-    normalization = st.radio(
-        "What Normalization Technique would you like to use?",
-        (":rainbow[No Normalization]", ":rainbow[Min Max Normalization]", ":rainbow[Z-Score]")
+        normalization = st.radio(
+            "What Normalization Technique would you like to use?",
+            (":rainbow[No Normalization]", ":rainbow[Min Max Normalization]", ":rainbow[Z-Score]")
     )
     
 except ValueError as ve:
