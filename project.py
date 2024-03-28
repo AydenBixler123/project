@@ -36,7 +36,8 @@ try:
         normalization = st.radio(
             "What Normalization Technique would you like to use?",
             ("No Normalization", "Min Max Normalization", "Z-Score")
-
+    )
+    with st.sidebar:
         selected_classifier = st.selectbox(
             "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")
