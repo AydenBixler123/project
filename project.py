@@ -84,7 +84,7 @@ try:
         ])
 
     st.write(xtrain)
-    st.write(ytrain)
+    st.write(xtest)
     
     pipe.fit(xtrain, ytrain)
 
