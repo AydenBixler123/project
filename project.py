@@ -49,11 +49,14 @@ try:
     )
 
     if normalization == "Min Max Normalization":
-        x_normalized = MinMaxScaler().fit_transform(x)
+        xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
+        xtest_normalized = MinMaxScaler().fit_transform(xtest)
     elif normalization == "Z-Score":
-        x_normalized = StandardScaler().fit_transform(x)
+        xtrain_normalized = StandardScaler().fit_transform(xtrain)
+        xtest_normalized = StandardScaler().fit_transform(xtest)
     else:
-        x_normalized = x
+        xtrain_normalized = xtrain
+        xtest_normalized = xtest
 
     if selected_classifier == "Min Max Normalization":
         pipe = Pipeline([
