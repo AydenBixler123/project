@@ -32,10 +32,10 @@ try:
     
     features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
     
-    xtrain = dftrain[features]
-    ytrain = dftrain['Survived']
-    xtest = dftest[features]
-    ytest = dftest['Survived']
+    xtrain = train[features]
+    ytrain = train['Survived']
+    xtest = test[features]
+    ytest = test['Survived']
     
     with st.sidebar:
         normalization = st.radio(
