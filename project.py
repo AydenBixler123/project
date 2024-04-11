@@ -11,6 +11,7 @@ try:
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.ensemble import BaggingClassifier
     from sklearn.tree import DecisionTreeClassifier
+    from sklearn.model_selection import train_test_split
     
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
@@ -24,12 +25,10 @@ try:
 
     for ele in df:
         df.dropna(axis=0,inplace=True)
-        
-    dftrain = df.sample(frac=.80, replace=False)
-    dftest = df
 
-    st.write(dftrain)
-    st.write(dftest)
+    st.write(df)
+    
+    xtrain, xtest, ytrain, ytest = train_test_split(X, y, test_size=0.20, random_state=42)
     
     features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
     
