@@ -24,13 +24,19 @@ try:
 
     for ele in df:
         df.dropna(axis=0,inplace=True)
+        
+    dftrain = df.sample(frac=.80, replace=False)
+    dftest = df
 
-    st.write(df)
+    st.write(dftrain)
+    st.write(dftest)
     
     features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
     
-    x = df[features]
-    y = df['Survived']
+    xtrain = dftrain[features]
+    ytrain = dftrain['Survived']
+    xtest = dftest[features]
+    ytest = dftest['Survived']
     
     with st.sidebar:
         normalization = st.radio(
@@ -74,7 +80,9 @@ try:
         ('selector', VarianceThreshold()),
         ('classifier', selected_classifier)
         ])
-        
+
+    pipe.fit(xtrain, ytrain)
+
 except ValueError as ve:
     print("")
 
