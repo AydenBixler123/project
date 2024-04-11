@@ -58,6 +58,6 @@ try:
         ])
     else:
         
-        except ValueError as ve:
-            print("")
+except ValueError as ve:
+    print("")
 
