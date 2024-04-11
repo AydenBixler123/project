@@ -83,6 +83,9 @@ try:
         ('classifier', selected_classifier)
         ])
 
+    st.write(xtrain)
+    st.write(ytrain)
+    
     pipe.fit(xtrain, ytrain)
 
 except ValueError as ve:
