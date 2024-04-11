@@ -50,13 +50,13 @@ try:
     else:
         x_normalized = x
 
-    #if selected_classifier == "Min Max Normalization" or "Z-Score":
-        #pipe = Pipeline([
-        #('scaler', StandardScaler()),
-        #('selector', VarianceThreshold()),
-        #('classifier', normalization)
-        #])
-    #else:
+    if selected_classifier == "Min Max Normalization" or "Z-Score":
+        pipe = Pipeline([
+        ('scaler', StandardScaler()),
+        ('selector', VarianceThreshold()),
+        ('classifier', normalization)
+        ])
+    else:
         
 except ValueError as ve:
     print("")
