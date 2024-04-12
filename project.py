@@ -154,8 +154,10 @@ try:
 	#'classifier__min_samples_split': min_samples_split,
       	#'classifier__max_depth': max_depth
     	#}
-    st.write('Training set score: ' + str(grid.score(xtrain_normalized, ytrain)))
-    st.write('Test set score: ' + str(grid.score(xtest_normalized, ytest)))
+    training_score = ('Training set score: ' + str(grid.score(xtrain_normalized, ytrain)))
+    test_score = ('Test set score: ' + str(grid.score(xtest_normalized, ytest)))	
+    st.write(training_score)
+    st.write(test_score)
 
 except ValueError as ve:
     print("")
