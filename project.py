@@ -37,19 +37,17 @@ try:
     xtest = test[features]
     ytest = test['Survived']
     
-    with st.sidebar:
-        normalization = st.radio(
+        normalization = st.sidebar.radio(
             "What Normalization Technique would you like to use?",
             ("No Normalization", "Min Max Normalization", "Z-Score")
     )
-    with st.sidebar:
-        selected_classifier = st.selectbox(
+        selected_classifier = st.sidebar.selectbox(
             "What Classification Method would you like to use?",
-            ("Decision Tree", "SVM", "Adaboost", "Random Forest")
-	age = st.slider('How old are you?', 0, 130, 25)
-	    
+            ("Decision Tree", "SVM", "Adaboost", "Random Forest")  
     )
-	    
+
+	age = st.sidebar.slider('How old are you?', 0, 130, 25)
+	
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
         xtest_normalized = MinMaxScaler().fit_transform(xtest)
