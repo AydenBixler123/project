@@ -157,7 +157,7 @@ try:
 	#'classifier__min_samples_split': min_samples_split,
       	#'classifier__max_depth': max_depth
     	#}
-    with st.form(key='form1'):
+    with st.form('form1'):
      st.form_submit_button('Press to Calculate')
 
 except ValueError as ve:
