@@ -52,7 +52,7 @@ try:
     elif "SVM" in selected_classifier:
      parameter = st.sidebar.slider('Choose a value for the  parameter.', 1, 1, 1)
     else:
-     pass
+     n_estimators = st.sidebar.slider('Choose a value for the n estimators parameter.', 1, 15, 1)
 	
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
