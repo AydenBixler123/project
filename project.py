@@ -77,21 +77,21 @@ try:
     	}
 
     #SVM
-    elif selected_classifier == "SVM":
-        pipe = Pipeline([
-        ('scaler', StandardScaler()),
-        ('selector', VarianceThreshold()),
-        ('classifier', selected_classifier)
-        ])
+    #elif selected_classifier == "SVM":
+        #pipe = Pipeline([
+        #('scaler', StandardScaler()),
+        #('selector', VarianceThreshold()),
+        #('classifier', selected_classifier)
+        #])
 
-    	pipe.fit(xtrain, ytrain)
+    	#pipe.fit(xtrain, ytrain)
     
-    	parameters = {
-      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	'selector__threshold': [0, 0.001, 0.01],
-	'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-      	'classifier__max_depth': [1, 2, 3]
-    	}
+    	#parameters = {
+      	#'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
+	#'selector__threshold': [0, 0.001, 0.01],
+	#'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      	#'classifier__max_depth': [1, 2, 3]
+    	#}
 
     #Adaboost
     elif selected_classifier == "Adaboost":
