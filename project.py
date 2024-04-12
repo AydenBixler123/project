@@ -47,12 +47,12 @@ try:
             "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")
     )
-    with st.sidebar:	    
-     if selected_classifier == "Decision Tree":
-       min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))
-       max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
-     else:
-      pass
+    if selected_classifier == "Decision Tree":
+     with st.sidebar:	    
+      min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))
+      max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
+    else:
+     pass
 	
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
