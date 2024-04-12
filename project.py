@@ -147,8 +147,8 @@ try:
 
 
    with st.form('form1'):
-    st.write('this is a form')
-    st.form_submit_button('Press to Calculate')
+     st.write('this is a form')
+     st.form_submit_button('Press to Calculate')
 
 except ValueError as ve:
     print("")
