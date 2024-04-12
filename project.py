@@ -84,8 +84,6 @@ try:
 	'classifier__max_features': max_features
     	}
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
-     st.write('Training set score: ' + str(grid.score(xtrain_normalized, ytrain)))
-     st.write('Test set score: ' + str(grid.score(xtest_normalized, ytest)))
     else:
      pass
     #SVM
@@ -156,7 +154,8 @@ try:
 	#'classifier__min_samples_split': min_samples_split,
       	#'classifier__max_depth': max_depth
     	#}
-
+    st.write('Training set score: ' + str(grid.score(xtrain_normalized, ytrain)))
+    st.write('Test set score: ' + str(grid.score(xtest_normalized, ytest)))
 
 except ValueError as ve:
     print("")
