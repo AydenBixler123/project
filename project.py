@@ -46,8 +46,13 @@ try:
         selected_classifier = st.selectbox(
             "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")
+	if "Decision Tree" in selected_classifier:
+	min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))			     )
+	max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
     )
+	    
 
+	
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
         xtest_normalized = MinMaxScaler().fit_transform(xtest)
