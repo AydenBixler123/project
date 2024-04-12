@@ -88,9 +88,10 @@ try:
       	'classifier__max_depth': max_depth,
 	'classifier__max_features': max_features
     	}
+	    
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 
-     accscores = cross_val_score(DecisionTree(), x_test, y_test, cv=5, scoring='accuracy')
+     accscores = cross_val_score(DecisionTree(), xtest_normalized, y_test, cv=5, scoring='accuracy')
      st.write(accscores)
      st.write(accscores.mean())
 
