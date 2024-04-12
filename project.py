@@ -151,6 +151,10 @@ try:
       	#'classifier__': ,
         #'classifier__': 
     	#}
+
+     accscores = cross_val_score(DecisionTree(), xtest_normalized, y_test, cv=5, scoring='accuracy')
+     st.write(accscores)
+     st.write(accscores.mean())    
      pass
      with st.form('form1'):
       st.write('this is a form')
