@@ -15,6 +15,9 @@ try:
     
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
+    age = st.slider('How old are you?', 0, 130, 25)
+	    
+	
     st.write("Please download the Titanic-Dataset.csv file from: www.kaggle.com/datasets/yasserh/titanic-dataset")
     
     uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
@@ -47,9 +50,6 @@ try:
             "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")
     )
-	    
-    with st.sidebar:
-	age = st.slider('How old are you?', 0, 130, 25)
 	    
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
@@ -133,6 +133,8 @@ try:
 	#'classifier__min_samples_split': min_samples_split,
       	#'classifier__max_depth': max_depth
     	#}
+
+
 except ValueError as ve:
     print("")
 
