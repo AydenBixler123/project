@@ -46,11 +46,13 @@ try:
         selected_classifier = st.selectbox(
             "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")
-	if "Decision Tree" in selected_classifier:
-	min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))			     )
-	max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
     )
-	    
+    if "Decision Tree" in selected_classifier:
+	with st.sidebar:
+	min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))
+	with st.sidebar:
+	max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
+    else:
 
 	
     if normalization == "Min Max Normalization":
@@ -65,10 +67,7 @@ try:
 
 
     #Decision Tree
-    if "Decision Tree" in selected_classifier:
-    with st.sidebar:
-	min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))			     )
-	max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
+    #if "Decision Tree" in selected_classifier:
 
     #SVM
     #elif selected_classifier == "SVM":
