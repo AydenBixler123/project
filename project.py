@@ -44,7 +44,7 @@ try:
             "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")  
     )
-    st.sidebar.form(key='Choose your options for analyzing the data'):
+    with st.form(key='Choose your options for analyzing the data'):
      if "Decision Tree" in selected_classifier:
       min_samples_split = st.sidebar.slider('Choose a value for the min samples split parameter.', 1, 10, 2)
       max_depth = st.sidebar.slider('Choose a value for the max depth parameter.', 1, 5, 1)
