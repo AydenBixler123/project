@@ -69,12 +69,12 @@ try:
 
         pipe.fit(xtrain, ytrain)
     
-    parameters = {
-      'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	    'selector__threshold': [0, 0.001, 0.01],
-	    'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-      'classifier__max_depth': [1, 2, 3]
-    }
+    	parameters = {
+      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
+	'selector__threshold': [0, 0.001, 0.01],
+	'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      	'classifier__max_depth': [1, 2, 3]
+    	}
 
     #SVM
     elif selected_classifier == "SVM":
@@ -84,14 +84,14 @@ try:
         ('classifier', selected_classifier)
         ])
 
-    pipe.fit(xtrain, ytrain)
+    	pipe.fit(xtrain, ytrain)
     
-    parameters = {
-      'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	    'selector__threshold': [0, 0.001, 0.01],
-	    'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-      'classifier__max_depth': [1, 2, 3]
-    }
+    	parameters = {
+      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
+	'selector__threshold': [0, 0.001, 0.01],
+	'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      	'classifier__max_depth': [1, 2, 3]
+    	}
 
     #Adaboost
     elif selected_classifier == "Adaboost":
@@ -101,14 +101,14 @@ try:
         ('classifier', selected_classifier)
         ])
     
-    pipe.fit(xtrain, ytrain)
+    	pipe.fit(xtrain, ytrain)
     
-    parameters = {
+    	parameters = {
         'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	    'selector__threshold': [0, 0.001, 0.01],
-	    'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+	'selector__threshold': [0, 0.001, 0.01],
+	'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
         'classifier__max_depth': [1, 2, 3]
-    }
+    	}
 
     #Random Forest
     else:
@@ -118,18 +118,18 @@ try:
         ('classifier', selected_classifier)
         ])
 
-    pipe.fit(xtrain, ytrain)
+    	pipe.fit(xtrain, ytrain)
 
-    n_estimators = st.slider(
+    	n_estimators = st.slider(
         'Pick a value for n_estimators parameter', 1, 15, 1, 1)
 
-    parameters = {
+    	parameters = {
         'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	    'selector__threshold': [0, 0.001, 0.01],
-	    'classifier__n_estimators': n_estimators,
+	'selector__threshold': [0, 0.001, 0.01],
+	'classifier__n_estimators': n_estimators,
         'classifier__max_depth': [1, 2, 3],
         'classifier__min_samples_leaf': [1, 2, 3]
-    }
+    	}
    
 
 except ValueError as ve:
