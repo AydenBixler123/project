@@ -60,7 +60,7 @@ try:
 
 
     #Decision Tree
-    if selected_classifier == "Decision Tree":
+    if "Decision Tree" in selected_classifier:
         pipe = Pipeline([
         ('scaler', StandardScaler()),
         ('selector', VarianceThreshold()),
@@ -68,12 +68,17 @@ try:
         ])
 
         pipe.fit(xtrain, ytrain)
-    
+
+	min_samples_split = st.slider(
+        'Pick a value for the min samples split parameter', 1, 9, 1, 2)
+	max_depth = st.slider(
+        'Pick a value for the max depth parameter', 1, 6, 1, 1)
+	
     parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
 	'selector__threshold': [0, 0.001, 0.01],
-	'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-      	'classifier__max_depth': [1, 2, 3]
+	'classifier__min_samples_split': min_samples_split,
+      	'classifier__max_depth': max_depth
     	}
 
     #SVM
