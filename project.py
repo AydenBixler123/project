@@ -144,7 +144,7 @@ try:
       	#'classifier__': ,
         #'classifier__': 
     	#}
-
+     pass
      with st.form('form1'):
       st.write('this is a form')
       st.form_submit_button('Press to Calculate')
