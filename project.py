@@ -76,7 +76,7 @@ try:
         ('selector', VarianceThreshold()),
         ('classifier', selected_classifier)
         ])
-     pipe.fit(xtrain_normalized, ytrain_normalized)
+     pipe.fit(xtrain_normalized, ytrain)
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
 	'selector__threshold': [0, 0.001, 0.01],
