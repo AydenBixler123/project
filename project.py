@@ -49,8 +49,8 @@ try:
     )
 	    
     with st.sidebar:
-      	min_samples_split = st.slider("Pick a value for the min samples split parameter", 1, 10, 1, 1)
-	
+	age = st.slider('How old are you?', 0, 130, 25)
+	    
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
         xtest_normalized = MinMaxScaler().fit_transform(xtest)
