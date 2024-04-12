@@ -46,7 +46,10 @@ try:
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")  
     )
 
-    age = st.sidebar.slider('How old are you?', 0, 130, 25)
+    if "Decision Tree" in selected_classifier:
+     age = st.sidebar.slider('How old are you?', 0, 130, 25)
+    else:
+     pass
 	
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
