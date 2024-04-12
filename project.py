@@ -61,26 +61,9 @@ try:
 
     #Decision Tree
     if "Decision Tree" in selected_classifier:
-        pipe = Pipeline([
-        ('scaler', StandardScaler()),
-        ('selector', VarianceThreshold()),
-        ('classifier', selected_classifier)
-        ])
-
-        pipe.fit(xtrain, ytrain)
-
-with st.sidebar:
-	min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2)
-				     )
-	max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1)
-			     )
-	
-    parameters = {
-      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	'selector__threshold': [0, 0.001, 0.01],
-	'classifier__min_samples_split': min_samples_split,
-      	'classifier__max_depth': max_depth
-    	}
+    with st.sidebar:
+	min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))			     )
+	max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
 
     #SVM
     #elif selected_classifier == "SVM":
@@ -117,27 +100,39 @@ with st.sidebar:
     	#}
 
     #Random Forest
-    else:
-        pipe = Pipeline([
-        ('scaler', StandardScaler()),
-        ('selector', VarianceThreshold()),
-        ('classifier', selected_classifier)
-        ])
+    #else:
+        #pipe = Pipeline([
+        #('scaler', StandardScaler()),
+        #('selector', VarianceThreshold()),
+        #('classifier', selected_classifier)
+        #])
 
-    	pipe.fit(xtrain, ytrain)
+    	#pipe.fit(xtrain, ytrain)
 
-    	n_estimators = st.slider(
-        'Pick a value for n_estimators parameter', 1, 15, 1, 1)
+    	#n_estimators = st.slider(
+        #'Pick a value for n_estimators parameter', 1, 15, 1, 1)
 
-    	parameters = {
-        'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	'selector__threshold': [0, 0.001, 0.01],
-	'classifier__n_estimators': n_estimators,
-        'classifier__max_depth': [1, 2, 3],
-        'classifier__min_samples_leaf': [1, 2, 3]
-    	}
+    	#parameters = {
+        #'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
+	#'selector__threshold': [0, 0.001, 0.01],
+	#'classifier__n_estimators': n_estimators,
+        #'classifier__max_depth': [1, 2, 3],
+        #'classifier__min_samples_leaf': [1, 2, 3]
+    	#}
+
    
-
+    #pipe = Pipeline([
+        #('scaler', StandardScaler()),
+        #('selector', VarianceThreshold()),
+        #('classifier', selected_classifier)
+        #]) 
+    #pipe.fit(xtrain, ytrain)
+    #parameters = {
+      	#'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
+	#'selector__threshold': [0, 0.001, 0.01],
+	#'classifier__min_samples_split': min_samples_split,
+      	#'classifier__max_depth': max_depth
+    	#}
 except ValueError as ve:
     print("")
 
