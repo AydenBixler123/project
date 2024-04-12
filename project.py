@@ -109,6 +109,8 @@ try:
         #'classifier__': 
     	#}
 
+     #grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
+
 	
     #Adaboost
     #elif "Adaboost" in selected_classifier:
@@ -128,6 +130,8 @@ try:
         #'classifier__': 
     	#}
 
+     #grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
+
 	
     #RandomForest
     else:
@@ -146,7 +150,9 @@ try:
       	#'classifier__': ,
         #'classifier__': 
     	#}
-   
+
+     #grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
+	    
      pass
      #with st.form('form1'):
       #st.write('this is a form')
