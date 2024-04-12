@@ -90,13 +90,6 @@ try:
     	}
 	    
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
-
-     DecisionTree = DecisionTreeClassifier(max_depth=3)
-	    
-     accscores = cross_val_score(DecisionTree, xtest_normalized, y_test, cv=5, scoring='accuracy')
-     st.write(accscores)
-     st.write(accscores.mean())
-
 	
     #SVM
     #elif "SVM" in selected_classifier:
@@ -153,14 +146,11 @@ try:
       	#'classifier__': ,
         #'classifier__': 
     	#}
-
-     accscores = cross_val_score(DecisionTreeClassifier(), xtest_normalized, y_test, cv=5, scoring='accuracy')
-     st.write(accscores)
-     st.write(accscores.mean())    
+   
      pass
-     with st.form('form1'):
-      st.write('this is a form')
-      st.form_submit_button('Press to Calculate')
+     #with st.form('form1'):
+      #st.write('this is a form')
+      #st.form_submit_button('Press to Calculate')
 
 except ValueError as ve:
     print("")
