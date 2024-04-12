@@ -13,6 +13,8 @@ try:
     from sklearn.model_selection import train_test_split
     from sklearn.svm import SVC
     from sklearn.ensemble import AdaBoostClassifier
+    from sklearn.model_selection import cross_val_score
+    from sklearn import metrics
 	
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
@@ -88,6 +90,11 @@ try:
     	}
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 
+    accscores = cross_val_score(DecisionTree(), x_test, y_test, cv=5, scoring='accuracy')
+    st.write(accscores)
+    st.write(accscores.mean())
+
+	
     #SVM
     #elif "SVM" in selected_classifier:
      #pipe = Pipeline([
