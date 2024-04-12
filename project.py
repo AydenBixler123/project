@@ -69,7 +69,7 @@ try:
 
         pipe.fit(xtrain, ytrain)
     
-    	parameters = {
+    parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
 	'selector__threshold': [0, 0.001, 0.01],
 	'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
