@@ -53,7 +53,7 @@ try:
       with st.sidebar:
        max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
     else:
-      break
+      pass
 	
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
