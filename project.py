@@ -52,7 +52,7 @@ try:
     elif "SVM" in selected_classifier:
      parameter = st.sidebar.slider('Choose a value for the  parameter.', 1, 2, 1)
     elif "Adaboost" in selected_classifier:
-     parameter = st.sidebar.slider('Choose a value for the  parameter.' 1, 2, 1)
+     parameter = st.sidebar.slider('Choose a value for the  parameter.', 1, 2, 1)
     else:
      n_estimators = st.sidebar.slider('Choose a value for the n estimators parameter.', 1, 15, 1)
 
