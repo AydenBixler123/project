@@ -49,9 +49,8 @@ try:
     )
     if selected_classifier == "Decision Tree":
      with st.sidebar:
-      st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))
-      min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))
-      max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
+      return min_samples_split = st.slider("Pick a value for the min samples split parameter", (1, 9, 1, 2))
+      return max_depth = st.slider('Pick a value for the max depth parameter', (1, 6, 1, 1))
     else:
      pass
 	
