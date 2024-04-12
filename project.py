@@ -134,7 +134,7 @@ try:
      #pipe = Pipeline([
         #('scaler', StandardScaler()),
         #('selector', VarianceThreshold()),
-        #('classifier', AdaBoostClassifier())
+        #('classifier', RandomForestClassifier())
         #])
 
      #pipe.fit(xtrain_normalized, ytrain)
