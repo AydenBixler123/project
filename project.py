@@ -84,8 +84,8 @@ try:
 	'classifier__max_features': max_features
     	}
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
-     training_score = ('Training set score: ' + str(grid.score(xtrain_normalized, ytrain)))
-     test_score = ('Test set score: ' + str(grid.score(xtest_normalized, ytest)))	
+     training_score = (str(grid.score(xtrain_normalized, ytrain)))
+     test_score = (str(grid.score(xtest_normalized, ytest)))	
      st.write(training_score)
      st.write(test_score)
     else:
