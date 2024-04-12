@@ -9,7 +9,6 @@ try:
     from sklearn.pipeline import Pipeline
     from sklearn.preprocessing import Normalizer, StandardScaler, MinMaxScaler, PowerTransformer, MaxAbsScaler, LabelEncoder
     from sklearn.ensemble import RandomForestClassifier
-    from sklearn.ensemble import BaggingClassifier
     from sklearn.tree import DecisionTreeClassifier
     from sklearn.model_selection import train_test_split
     
@@ -74,7 +73,7 @@ try:
      pipe = Pipeline([
         ('scaler', StandardScaler()),
         ('selector', VarianceThreshold()),
-        ('classifier', selected_classifier)
+        ('classifier', DecisionTreeClassifier())
         ])
      pipe.fit(xtrain_normalized, ytrain)
      parameters = {
