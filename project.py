@@ -50,7 +50,7 @@ try:
      min_samples_split = st.sidebar.slider('Choose a value for the min samples split parameter.', 1, 10, 2)
      max_depth = st.sidebar.slider('Choose a value for the max depth parameter.', 1, 5, 1)
     elif "SVM" in selected_classifier:
-     parameter = st.sidebar.slider('Choose a value for the  parameter.', 1, 1, 1)
+     parameter = st.sidebar.slider('Choose a value for the  parameter.', 1, 2, 1)
     else:
      n_estimators = st.sidebar.slider('Choose a value for the n estimators parameter.', 1, 15, 1)
 	
