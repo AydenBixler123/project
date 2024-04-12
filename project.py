@@ -68,9 +68,15 @@ try:
         xtest_normalized = xtest
 
 
-    #Decision Tree
-    #if "Decision Tree" in selected_classifier:
-
+    ##Decision Tree
+    if "Decision Tree" in selected_classifier:
+     pipe = Pipeline([
+        ('scaler', StandardScaler()),
+        ('selector', VarianceThreshold()),
+        ('classifier', selected_classifier)
+        ])
+    else:
+     pass
     #SVM
     #elif selected_classifier == "SVM":
         #pipe = Pipeline([
