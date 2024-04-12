@@ -88,7 +88,10 @@ try:
     	}
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 
-	
+     with st.form('form1'):
+      st.write('this is a form')
+      st.form_submit_button('Press to Calculate')
+
     #SVM
     #elif "SVM" in selected_classifier:
      #pipe = Pipeline([
