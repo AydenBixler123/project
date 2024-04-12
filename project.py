@@ -69,7 +69,7 @@ try:
 
         pipe.fit(xtrain, ytrain)
 
-				with st.sidebar:
+		with st.sidebar:
 				min_samples_split = st.slider(
         "Pick a value for the min samples split parameter", (1, 9, 1, 2)
 				)
