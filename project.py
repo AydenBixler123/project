@@ -51,8 +51,11 @@ try:
      max_depth = st.sidebar.slider('Choose a value for the max depth parameter.', 1, 5, 1)
     elif "SVM" in selected_classifier:
      parameter = st.sidebar.slider('Choose a value for the  parameter.', 1, 2, 1)
+    elif "Adaboost" in selected_classifier:
+     parameter = st.sidebar.slider('Choose a value for the  parameter.' 1, 2, 1)
     else:
      n_estimators = st.sidebar.slider('Choose a value for the n estimators parameter.', 1, 15, 1)
+
 	
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
