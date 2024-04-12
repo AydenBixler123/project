@@ -11,7 +11,9 @@ try:
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.tree import DecisionTreeClassifier
     from sklearn.model_selection import train_test_split
-    
+    from sklearn.svm import SVC
+    from sklearn.ensemble import AdaBoostClassifier
+	
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
     st.write("Please download the Titanic-Dataset.csv file from: www.kaggle.com/datasets/yasserh/titanic-dataset")
@@ -74,7 +76,9 @@ try:
         ('selector', VarianceThreshold()),
         ('classifier', DecisionTreeClassifier())
         ])
+	    
      pipe.fit(xtrain_normalized, ytrain)
+	    
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
 	'selector__threshold': [0, 0.001, 0.01],
@@ -83,75 +87,62 @@ try:
 	'classifier__max_features': max_features
     	}
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
-    else:
-     pass
+
+	
     #SVM
-    #elif selected_classifier == "SVM":
-        #pipe = Pipeline([
+    #elif "SVM" in selected_classifier:
+     #pipe = Pipeline([
         #('scaler', StandardScaler()),
         #('selector', VarianceThreshold()),
-        #('classifier', selected_classifier)
+        #('classifier', SVC())
         #])
 
-    	#pipe.fit(xtrain, ytrain)
+     #pipe.fit(xtrain_normalized, ytrain)
     
-    	#parameters = {
+     #parameters = {
       	#'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
 	#'selector__threshold': [0, 0.001, 0.01],
-	#'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-      	#'classifier__max_depth': [1, 2, 3]
+	#'classifier__': ,
+      	#'classifier__': ,
+        #'classifier__': 
     	#}
 
+	
     #Adaboost
-    #elif selected_classifier == "Adaboost":
-        #pipe = Pipeline([
+    #elif "Adaboost" in selected_classifier:
+     #pipe = Pipeline([
         #('scaler', StandardScaler()),
         #('selector', VarianceThreshold()),
-        #('classifier', selected_classifier)
-        #])
-    
-    	#pipe.fit(xtrain, ytrain)
-    
-    	#parameters = {
-        #'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	#'selector__threshold': [0, 0.001, 0.01],
-	#'classifier__n_estimators': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-        #'classifier__max_depth': [1, 2, 3]
-    	#}
-
-    #Random Forest
-    #else:
-        #pipe = Pipeline([
-        #('scaler', StandardScaler()),
-        #('selector', VarianceThreshold()),
-        #('classifier', selected_classifier)
+        #('classifier', AdaBoostClassifier())
         #])
 
-    	#pipe.fit(xtrain, ytrain)
-
-    	#n_estimators = st.slider(
-        #'Pick a value for n_estimators parameter', 1, 15, 1, 1)
-
-    	#parameters = {
-        #'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	#'selector__threshold': [0, 0.001, 0.01],
-	#'classifier__n_estimators': n_estimators,
-        #'classifier__max_depth': [1, 2, 3],
-        #'classifier__min_samples_leaf': [1, 2, 3]
-    	#}
-
-   
-    #pipe = Pipeline([
-        #('scaler', StandardScaler()),
-        #('selector', VarianceThreshold()),
-        #('classifier', selected_classifier)
-        #]) 
-    #pipe.fit(xtrain, ytrain)
-    #parameters = {
+     #pipe.fit(xtrain_normalized, ytrain)
+    
+     #parameters = {
       	#'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
 	#'selector__threshold': [0, 0.001, 0.01],
-	#'classifier__min_samples_split': min_samples_split,
-      	#'classifier__max_depth': max_depth
+	#'classifier__': ,
+      	#'classifier__': ,
+        #'classifier__': 
+    	#}
+
+	
+    #RandomForest
+    else:
+     #pipe = Pipeline([
+        #('scaler', StandardScaler()),
+        #('selector', VarianceThreshold()),
+        #('classifier', AdaBoostClassifier())
+        #])
+
+     #pipe.fit(xtrain_normalized, ytrain)
+    
+     #parameters = {
+      	#'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
+	#'selector__threshold': [0, 0.001, 0.01],
+	#'classifier__': ,
+      	#'classifier__': ,
+        #'classifier__': 
     	#}
 
 
