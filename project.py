@@ -15,10 +15,6 @@ try:
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
     st.write("Please download the Titanic-Dataset.csv file from: www.kaggle.com/datasets/yasserh/titanic-dataset")
-
-    with st.form('form1'):
-     st.write('this is a form')
-     st.form_submit_button('Press to Calculate')
 	
     uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
 
@@ -162,6 +158,10 @@ try:
       	#'classifier__max_depth': max_depth
     	#}
 
+
+    with st.form('form1'):
+     st.write('this is a form')
+     st.form_submit_button('Press to Calculate')
 
 except ValueError as ve:
     print("")
