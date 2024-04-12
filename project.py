@@ -15,9 +15,6 @@ try:
     
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
-    age = st.slider('How old are you?', 0, 130, 25)
-	    
-	
     st.write("Please download the Titanic-Dataset.csv file from: www.kaggle.com/datasets/yasserh/titanic-dataset")
     
     uploadedfile = st.file_uploader("Please insert the Titanic-Dataset.csv file")
@@ -49,6 +46,8 @@ try:
         selected_classifier = st.selectbox(
             "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")
+	age = st.slider('How old are you?', 0, 130, 25)
+	    
     )
 	    
     if normalization == "Min Max Normalization":
