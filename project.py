@@ -44,7 +44,7 @@ try:
             "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")  
     )
-    with st.form(key='Choose your options for analyzing the data'):
+    with st.form(key='Choose Your Options For Analyzing the Data'):
      if "Decision Tree" in selected_classifier:
       min_samples_split = st.sidebar.slider('Choose a value for the min samples split parameter.', 1, 10, 2)
       max_depth = st.sidebar.slider('Choose a value for the max depth parameter.', 1, 5, 1)
@@ -55,6 +55,7 @@ try:
       parameter = st.sidebar.slider('Choose a value for the  parameter.', 1, 2, 1)
      else:
       n_estimators = st.sidebar.slider('Choose a value for the n estimators parameter.', 1, 15, 1)
+     st.sidebar.form_submit_button('Press to Calculate.')
 
 	
     if normalization == "Min Max Normalization":
