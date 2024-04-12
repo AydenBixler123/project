@@ -47,7 +47,7 @@ try:
     )
 
     if "Decision Tree" in selected_classifier:
-     age = st.sidebar.slider('How old are you?', 0, 130, 25)
+     min_samples_split = st.sidebar.slider('Choose a value for the min samples split parameter?', 0, 10, 2)
     else:
      pass
 	
