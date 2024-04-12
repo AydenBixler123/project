@@ -49,6 +49,7 @@ try:
     if "Decision Tree" in selected_classifier:
      min_samples_split = st.sidebar.slider('Choose a value for the min samples split parameter.', 1, 10, 2)
      max_depth = st.sidebar.slider('Choose a value for the max depth parameter.', 1, 5, 1)
+     max_features = st.sidebar.slider('Choose a value for the max features parameter.', 1, 7, 7)
     elif "SVM" in selected_classifier:
      parameter = st.sidebar.slider('Choose a value for the  parameter.', 1, 2, 1)
     elif "Adaboost" in selected_classifier:
@@ -75,6 +76,14 @@ try:
         ('selector', VarianceThreshold()),
         ('classifier', selected_classifier)
         ])
+     pipe.fit(xtrain, ytrain)
+     parameters = {
+      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
+	'selector__threshold': [0, 0.001, 0.01],
+	'classifier__n_estimators': min_samples_split,
+      	'classifier__max_depth': max_depth,
+	'classifier__max_features': max_features
+    	}
     else:
      pass
     #SVM
