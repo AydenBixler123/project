@@ -158,7 +158,7 @@ try:
       	#'classifier__max_depth': max_depth
     	#}
     with st.form(key='form1'):
-		 st.form_submit_button('Press to Calculate')
+     st.form_submit_button('Press to Calculate')
 
 except ValueError as ve:
     print("")
