@@ -91,7 +91,9 @@ try:
 	    
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 
-     accscores = cross_val_score(DecisionTree(), xtest_normalized, y_test, cv=5, scoring='accuracy')
+     DecisionTree = DecisionTreeClassifier(max_depth=3)
+	    
+     accscores = cross_val_score(DecisionTree, xtest_normalized, y_test, cv=5, scoring='accuracy')
      st.write(accscores)
      st.write(accscores.mean())
 
