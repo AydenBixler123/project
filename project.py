@@ -40,7 +40,9 @@ try:
     xtest = test[features]
     ytest = test['Survived']
 
-    st.sidebar.button("calculate")
+    if st.sidebar.button("Calculate"):
+     st.write('Training set score: ' + str(grid.score(x_train, y_train)))
+    
 	
     normalization = st.sidebar.radio(
             "What Normalization Technique would you like to use?",
