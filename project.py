@@ -94,7 +94,7 @@ try:
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
 	'selector__threshold': [0, 0.001, 0.01],
-	'classifier__n_estimators': min_samples_split,
+	'classifier__min_samples_split': min_samples_split,
       	'classifier__max_depth': max_depth,
 	'classifier__max_features': max_features
     	}
@@ -102,24 +102,24 @@ try:
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 	
     #SVM
-    #elif "SVM" in selected_classifier:
-     #pipe = Pipeline([
-        #('scaler', StandardScaler()),
-        #('selector', VarianceThreshold()),
-        #('classifier', SVC())
-        #])
+    elif "SVM" in selected_classifier:
+     pipe = Pipeline([
+        ('scaler', StandardScaler()),
+        ('selector', VarianceThreshold()),
+        ('classifier', SVC())
+        ])
 
-     #pipe.fit(xtrain_normalized, ytrain)
+     pipe.fit(xtrain_normalized, ytrain)
     
-     #parameters = {
-      	#'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	#'selector__threshold': [0, 0.001, 0.01],
-	#'classifier__': ,
-      	#'classifier__': ,
-        #'classifier__': 
-    	#}
+     parameters = {
+      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
+	'selector__threshold': [0, 0.001, 0.01],
+	'classifier__C': C,
+      	'classifier__shrinking': shrinking,
+        'classifier__probability': probability
+    	}
 
-     #grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
+     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 
 	
     #Adaboost
