@@ -1,7 +1,7 @@
 try:
-
     import streamlit as st
     import pandas as pd
+    import joblib
     from sklearn.preprocessing import StandardScaler
     from sklearn.neighbors import KNeighborsClassifier
     from sklearn.feature_selection import VarianceThreshold
@@ -15,6 +15,8 @@ try:
     from sklearn.model_selection import cross_val_score
     from sklearn import metrics
     from sklearn.model_selection import GridSearchCV
+    from sklearn.metrics import accuracy_score, f1_score
+    
 	
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
@@ -31,7 +33,12 @@ try:
 
     st.write(df)
 
-    st.write(str(grid.score(xtrain_normalized, ytrain)))
+    #st.write(str(grid.score(xtrain_normalized, ytrain)))
+    best_clf = grid.best_estimator_
+    y_pred = best_clf.predict(xtest_normalized)
+    best_clf.fit(xtrain_normalized, y_train)
+    predictions = best_clf.predict(xtest_normalized)
+    st.write("Accuracy: {:.2f}%".format(accuracy_score(y_test, y_pred) * 100))
     
     train, test = train_test_split(df, test_size=0.2)
     
