@@ -144,23 +144,23 @@ try:
 	
     #RandomForest
     else:
-     #pipe = Pipeline([
-        #('scaler', StandardScaler()),
-        #('selector', VarianceThreshold()),
-        #('classifier', RandomForestClassifier())
-        #])
+     pipe = Pipeline([
+        ('scaler', StandardScaler()),
+        ('selector', VarianceThreshold()),
+        ('classifier', RandomForestClassifier())
+        ])
 
-     #pipe.fit(xtrain_normalized, ytrain)
+     pipe.fit(xtrain_normalized, ytrain)
     
-     #parameters = {
-      	#'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	#'selector__threshold': [0, 0.001, 0.01],
-	#'classifier__': ,
-      	#'classifier__': ,
-        #'classifier__': 
-    	#}
+     parameters = {
+      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
+	'selector__threshold': [0, 0.001, 0.01],
+	'classifier__n_estimators': n_estimators,
+      	'classifier__min_samples_leaf': min_samples_leaf,
+        'classifier__max_depth': max_depth
+    	}
 
-     #grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
+     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 	    
      pass
      #with st.form('form1'):
