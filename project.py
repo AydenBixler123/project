@@ -168,6 +168,8 @@ try:
       st.write('this is a form')
       st.form_submit_button('Press to Calculate')
 
+     st.sidebar.button("calculate")
+
 except ValueError as ve:
     print("")
 
