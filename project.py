@@ -83,7 +83,7 @@ try:
     else:
         xtrain_normalized = xtrain
         xtest_normalized = xtest
-    pass
+     pass
 
     #st.write(str(grid.score(xtrain_normalized, ytrain)))
     best_clf = grid.best_estimator_
@@ -174,10 +174,7 @@ try:
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 	    
      pass
-	    
-
-
-
+	
 except ValueError as ve:
     print("")
 
