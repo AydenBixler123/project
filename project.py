@@ -83,7 +83,7 @@ try:
     else:
         xtrain_normalized = xtrain
         xtest_normalized = xtest
-	pass
+    pass
 
     #st.write(str(grid.score(xtrain_normalized, ytrain)))
     best_clf = grid.best_estimator_
