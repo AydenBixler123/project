@@ -24,14 +24,14 @@ try:
 
     df = pd.read_csv(uploadedfile)
 
-    st.write(str(grid.score(xtrain_normalized, ytrain)))
-
     df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
 
     for ele in df:
         df.dropna(axis=0,inplace=True)
 
     st.write(df)
+
+    st.write(str(grid.score(xtrain_normalized, ytrain)))
     
     train, test = train_test_split(df, test_size=0.2)
     
