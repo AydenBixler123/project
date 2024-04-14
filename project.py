@@ -54,9 +54,9 @@ try:
      max_features = st.sidebar.slider('Choose a value for the max features parameter.', 1, 7, 7)
     elif "SVM" in selected_classifier:
      C = st.sidebar.slider('Choose a value for the C parameter.', 1, 3, 1)
-     shrinking = st.sidebar.radio("Would you like the shrinking parameter to be on/off?",
+     shrinking = st.sidebar.radio("Would you like the shrinking parameter to be True/False?",
             (True, False))
-     probability = st.sidebar.radio("Would you like the probability parameter to be on/off?",
+     probability = st.sidebar.radio("Would you like the probability parameter to be True/False?",
             (True, False))
     elif "Adaboost" in selected_classifier: 
      n_estimators = st.sidebar.slider('Choose a value for the n estimators parameter.', 10, 100, 10, 10)
