@@ -46,8 +46,11 @@ try:
     )
     selected_classifier = st.sidebar.selectbox(
             "What Classification Method would you like to use?",
-            ("Decision Tree", "SVM", "Adaboost", "Random Forest")  
+            ("Decision Tree", "SVM", "Adaboost", "Random Forest")
     )
+
+    st.sidebar.button("calculate")
+	
     if "Decision Tree" in selected_classifier:
      min_samples_split = st.sidebar.slider('Choose a value for the min samples split parameter.', 1, 10, 2)
      max_depth = st.sidebar.slider('Choose a value for the max depth parameter.', 1, 5, 1)
@@ -69,6 +72,7 @@ try:
       max_depth = None
       pass
 
+	
 	
     if normalization == "Min Max Normalization":
         xtrain_normalized = MinMaxScaler().fit_transform(xtrain)
@@ -168,7 +172,7 @@ try:
       st.write('this is a form')
       st.form_submit_button('Press to Calculate')
 
-     st.sidebar.button("calculate")
+
 
 except ValueError as ve:
     print("")
