@@ -39,7 +39,9 @@ try:
     ytrain = train['Survived']
     xtest = test[features]
     ytest = test['Survived']
-    
+
+    st.sidebar.button("calculate")
+	
     normalization = st.sidebar.radio(
             "What Normalization Technique would you like to use?",
             ("No Normalization", "Min Max Normalization", "Z-Score")
@@ -48,8 +50,6 @@ try:
             "What Classification Method would you like to use?",
             ("Decision Tree", "SVM", "Adaboost", "Random Forest")
     )
-
-    st.sidebar.button("calculate")
 	
     if "Decision Tree" in selected_classifier:
      min_samples_split = st.sidebar.slider('Choose a value for the min samples split parameter.', 1, 10, 2)
