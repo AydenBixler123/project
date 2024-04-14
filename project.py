@@ -24,7 +24,7 @@ try:
 
     df = pd.read_csv(uploadedfile)
 
-    st.write(str(grid.score(xtrain_normalized, ytrain)))
+    st.write(grid.score(xtrain_normalized, ytrain))
 
     df = df.drop(['PassengerId', 'Embarked', 'Cabin', 'Ticket', 'Name'], axis=1)
 
