@@ -32,13 +32,6 @@ try:
         df.dropna(axis=0,inplace=True)
 
     st.write(df)
-
-    #st.write(str(grid.score(xtrain_normalized, ytrain)))
-    best_clf = grid.best_estimator_
-    y_pred = best_clf.predict(xtest_normalized)
-    best_clf.fit(xtrain_normalized, y_train)
-    predictions = best_clf.predict(xtest_normalized)
-    st.write("Accuracy: {:.2f}%".format(accuracy_score(y_test, y_pred) * 100))
     
     train, test = train_test_split(df, test_size=0.2)
     
@@ -79,7 +72,6 @@ try:
      if max_depth == 0:
       max_depth = None
       pass
-
 	
 	
     if normalization == "Min Max Normalization":
@@ -92,6 +84,12 @@ try:
         xtrain_normalized = xtrain
         xtest_normalized = xtest
 
+    #st.write(str(grid.score(xtrain_normalized, ytrain)))
+    best_clf = grid.best_estimator_
+    y_pred = best_clf.predict(xtest_normalized)
+    best_clf.fit(xtrain_normalized, y_train)
+    predictions = best_clf.predict(xtest_normalized)
+    st.write("Accuracy: {:.2f}%".format(accuracy_score(y_test, y_pred) * 100))
 
     ##Decision Tree
     if "Decision Tree" in selected_classifier:
