@@ -86,10 +86,10 @@ try:
     pass
 
     #st.write(str(grid.score(xtrain_normalized, ytrain)))
-    best_clf = grid.best_estimator_
-    best_clf.fit(xtrain_normalized, y_train)
-    y_pred = best_clf.predict(xtest_normalized)
-    st.write("Accuracy: {:.2f}%".format(accuracy_score(y_test, y_pred) * 100))
+    #best_clf = grid.best_estimator_
+    #best_clf.fit(xtrain_normalized, y_train)
+    #y_pred = best_clf.predict(xtest_normalized)
+    #st.write("Accuracy: {:.2f}%".format(accuracy_score(y_test, y_pred) * 100))
 
     ##Decision Tree
     if "Decision Tree" in selected_classifier:
