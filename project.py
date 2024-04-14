@@ -53,11 +53,21 @@ try:
      max_depth = st.sidebar.slider('Choose a value for the max depth parameter.', 1, 5, 1)
      max_features = st.sidebar.slider('Choose a value for the max features parameter.', 1, 7, 7)
     elif "SVM" in selected_classifier:
-     parameter = st.sidebar.slider('Choose a value for the  parameter.', 1, 2, 1)
-    elif "Adaboost" in selected_classifier:
+     C = st.sidebar.slider('Choose a value for the C parameter.', 1, 3, 1)
+     shrinking = st.sidebar.radio("Would you like the shrinking parameter to be on/off?",
+            (True, False)
+     probability = st.sidebar.radio("Would you like the probability parameter to be on/off?",
+            (True, False)
+    elif "Adaboost" in selected_classifier: 
      n_estimators = st.sidebar.slider('Choose a value for the n estimators parameter.', 10, 100, 10, 10)
+     learning_rate = st.sidebar.slider('Choose a value for the learning rate parameter.', 1, 5, 1)
     else:
      n_estimators = st.sidebar.slider('Choose a value for the n estimators parameter.', 1, 15, 1)
+     min_samples_leaf = st.sidebar.slider('Choose a value for the min samples leaf parameter.', 1, 5, 1)
+     max_depth = st.sidebar.slider('Choose a value for the max depth parameter.', 0, 3, 0)
+     if max_depth == 0:
+      max_depth = None
+      pass
 
 	
     if normalization == "Min Max Normalization":
