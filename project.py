@@ -89,7 +89,6 @@ try:
     best_clf = grid.best_estimator_
     best_clf.fit(xtrain_normalized, y_train)
     y_pred = best_clf.predict(xtest_normalized)
-    y_pred = predictions
     st.write("Accuracy: {:.2f}%".format(accuracy_score(y_test, y_pred) * 100))
 
     ##Decision Tree
@@ -110,7 +109,7 @@ try:
 	'classifier__max_features': max_features
     	}
 	    
-     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
+     grid = GridSearchCV(DecisionTree(), parameters, cv=2).fit(xtrain_normalized, ytrain)
 	
     #SVM
     elif "SVM" in selected_classifier:
