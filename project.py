@@ -14,6 +14,7 @@ try:
     from sklearn.ensemble import AdaBoostClassifier
     from sklearn.model_selection import cross_val_score
     from sklearn import metrics
+    from sklearn.model_selection import GridSearchCV
 	
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
 
