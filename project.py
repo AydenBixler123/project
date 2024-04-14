@@ -109,7 +109,7 @@ try:
 	'classifier__max_features': max_features
     	}
 	    
-     grid = GridSearchCV(DecisionTree(), parameters, cv=2).fit(xtrain_normalized, ytrain)
+     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 	
     #SVM
     elif "SVM" in selected_classifier:
@@ -129,7 +129,7 @@ try:
         'classifier__probability': probability
     	}
 
-     grid = GridSearchCV(SVC(), parameters, cv=2).fit(xtrain_normalized, ytrain)
+     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 
 	
     #Adaboost
@@ -149,7 +149,7 @@ try:
       	'classifier__learning_rate': learning_rate
     	}
 
-     grid = GridSearchCV(AdaboostClassifier(), parameters, cv=2).fit(xtrain_normalized, ytrain)
+     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 
 	
     #RandomForest
@@ -170,7 +170,7 @@ try:
         'classifier__max_depth': max_depth
     	}
 
-     grid = GridSearchCV(RandomForestClassifier(), parameters, cv=2).fit(xtrain_normalized, ytrain)
+     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 	    
      pass
 	
