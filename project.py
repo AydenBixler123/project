@@ -40,10 +40,7 @@ try:
     xtest = test[features]
     ytest = test['Survived']
 
-    if st.sidebar.button("Calculate"):
-     st.write(str(grid.score(xtrain_normalized, ytrain)))
     
-	
     normalization = st.sidebar.radio(
             "What Normalization Technique would you like to use?",
             ("No Normalization", "Min Max Normalization", "Z-Score")
@@ -107,6 +104,7 @@ try:
 	    
      grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 	
+     st.write(str(grid.score(xtrain_normalized, ytrain)))
     #SVM
     elif "SVM" in selected_classifier:
      pipe = Pipeline([
