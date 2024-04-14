@@ -41,7 +41,7 @@ try:
     ytest = test['Survived']
 
     if st.sidebar.button("Calculate"):
-     st.write('Training set score: ' + str(grid.score(xtrain_normalized, ytrain)))
+     st.write(str(grid.score(xtrain_normalized, ytrain)))
     
 	
     normalization = st.sidebar.radio(
