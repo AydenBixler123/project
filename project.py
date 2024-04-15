@@ -90,10 +90,10 @@ try:
 
     #This is the output line were running into the issue with
     #st.write(str(grid.score(xtrain_normalized, ytrain)))
-    best_clf = grid.best_estimator_
-    best_clf.fit(xtrain_normalized, y_train)
-    y_pred = best_clf.predict(xtest_normalized)
-    st.write("Accuracy: {:.2f}%".format(accuracy_score(y_test, y_pred) * 100))
+    #best_clf = grid.best_estimator_
+    #best_clf.fit(xtrain_normalized, y_train)
+    #y_pred = best_clf.predict(xtest_normalized)
+    #st.write("Accuracy: {:.2f}%".format(accuracy_score(y_test, y_pred) * 100))
 
 
 
@@ -107,7 +107,7 @@ try:
         ('classifier', DecisionTreeClassifier())
         ])
 	    
-     pipe.fit(xtrain_normalized, ytrain)
+     #pipe.fit(xtrain_normalized, ytrain)
 	    
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
@@ -127,7 +127,7 @@ try:
         ('classifier', SVC())
         ])
 
-     pipe.fit(xtrain_normalized, ytrain)
+     #pipe.fit(xtrain_normalized, ytrain)
     
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
@@ -148,7 +148,7 @@ try:
         ('classifier', AdaBoostClassifier())
         ])
 
-     pipe.fit(xtrain_normalized, ytrain)
+     #pipe.fit(xtrain_normalized, ytrain)
     
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
@@ -168,7 +168,7 @@ try:
         ('classifier', RandomForestClassifier())
         ])
 
-     pipe.fit(xtrain_normalized, ytrain)
+     #pipe.fit(xtrain_normalized, ytrain)
     
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
