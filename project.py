@@ -89,7 +89,7 @@ try:
 
 
     #This is the output line were running into the issue with
-    st.write(str(grid.score(xtrain_normalized, ytrain)))
+    #st.write(str(grid.score(xtrain_normalized, ytrain)))
     best_clf = grid.best_estimator_
     best_clf.fit(xtrain_normalized, y_train)
     y_pred = best_clf.predict(xtest_normalized)
