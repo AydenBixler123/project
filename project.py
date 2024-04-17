@@ -35,7 +35,7 @@ try:
     
     train, test = train_test_split(df, test_size=0.2)
     
-    features = ['Pclass', 'Sex', 'Age', 'SibSp', 'Parch', 'Fare']
+    features = ['Pclass', 'Age', 'SibSp', 'Parch', 'Fare']
     
     xtrain = train[features]
     ytrain = train['Survived']
