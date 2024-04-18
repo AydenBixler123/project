@@ -91,6 +91,7 @@ try:
      predictions = decision_tree_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
      pscore = cross_val_score(decision_tree_clf, xtest_normalized, ytest, scoring='precision')
+     rscore = cross_val_score(decision_tree_clf, xtest_normalized, ytest, scoring='recall')
 	    
     #SVM
     elif "SVM" in selected_classifier:
@@ -99,6 +100,7 @@ try:
      predictions = SVC_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
      pscore = cross_val_score(SVC_clf, xtest_normalized, ytest, scoring='precision')
+     rscore = cross_val_score(SVC_clf, xtest_normalized, ytest, scoring='recall')
 	     
     #Adaboost
     elif "Adaboost" in selected_classifier:
@@ -107,6 +109,7 @@ try:
      predictions = Adaboost_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
      pscore = cross_val_score(Adaboost_clf, xtest_normalized, ytest, scoring='precision')
+     rscore = cross_val_score(Adaboost_clf, xtest_normalized, ytest, scoring='recall')
 	    
     #RandomForest
     else:
@@ -115,10 +118,12 @@ try:
      predictions = RandomForest_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
      pscore = cross_val_score(RandomForest_clf, xtest_normalized, ytest, scoring='precision')
+     rscore = cross_val_score(RandomForest_clf, xtest_normalized, ytest, scoring='recall')
      pass
 	    
     st.write("Accuracy: " + str(ascore))
     st.write("Precision: " + str(pscore.mean()))
+    st.write("Recall: " + str(rscore.mean()))
 	
 except ValueError as ve:
     print("")
