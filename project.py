@@ -122,22 +122,11 @@ try:
 	    
     #RandomForest
     else:
-     pipe = Pipeline([
-        ('scaler', StandardScaler()),
-        ('selector', VarianceThreshold()),
-        ('classifier', RandomForestClassifier())
-        ])
-
-     pipe.fit(xtrain_normalized, ytrain)
-    
-     parameters = {
-      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	'selector__threshold': [0, 0.001, 0.01],
-	'classifier__n_estimators': n_estimators,
-      	'classifier__min_samples_leaf': min_samples_leaf,
-        'classifier__max_depth': max_depth
-    	}
-	    
+     RandomForest_clf = RandomForestClassifier(n_estimators=n_estimators, min_samples_leaf=min_samples_leaf, max_depth=max_depth)
+     RandomForest_clf.fit(xtrain_normalized, ytrain)
+     predictions = RandomForest_clf.predict(xtest_normalized)
+     score = accuracy_score(ytest, predictions)
+     st.write(score)
      pass
 	
 except ValueError as ve:
