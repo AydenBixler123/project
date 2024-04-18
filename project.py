@@ -14,6 +14,8 @@ try:
     from sklearn.model_selection import cross_val_score
     from sklearn import metrics
     from sklearn.metrics import accuracy_score
+    from sklearn.metrics import precision_score
+    from sklearn.metrics import recall_score
     
 	
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
