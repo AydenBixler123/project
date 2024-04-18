@@ -51,7 +51,7 @@ try:
     )
 	
     if "Decision Tree" in selected_classifier:
-     min_samples_split = st.sidebar.slider('Choose a value for the min samples split parameter.', 1, 10, 2)
+     min_samples_split = st.sidebar.slider('Choose a value for the min samples split parameter.', 2, 10, 2, 2)
      max_depth = st.sidebar.slider('Choose a value for the max depth parameter.', 1, 5, 1)
      max_features = st.sidebar.slider('Choose a value for the max features parameter.', 1, 7, 7)
     elif "SVM" in selected_classifier:
