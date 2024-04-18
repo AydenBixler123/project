@@ -113,7 +113,7 @@ try:
      ascore = accuracy_score(ytest, predictions)
      pass
 	    
-    st.write("Accuracy:" + str(ascore))
+    st.write("Accuracy: " + str(ascore))
 	
 except ValueError as ve:
     print("")
