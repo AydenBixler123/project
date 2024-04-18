@@ -98,6 +98,7 @@ try:
      SVC_clf.fit(xtrain_normalized, ytrain)
      predictions = SVC_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
+     pscore = cross_val_score(SVC_clf, xtest_normalized, ytest, scoring='precision')
 	     
     #Adaboost
     elif "Adaboost" in selected_classifier:
@@ -105,6 +106,7 @@ try:
      Adaboost_clf.fit(xtrain_normalized, ytrain)
      predictions = Adaboost_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
+     pscore = cross_val_score(Adaboost_clf, xtest_normalized, ytest, scoring='precision')
 	    
     #RandomForest
     else:
@@ -112,6 +114,7 @@ try:
      RandomForest_clf.fit(xtrain_normalized, ytrain)
      predictions = RandomForest_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
+     pscore = cross_val_score(RandomForest_clf, xtest_normalized, ytest, scoring='precision')
      pass
 	    
     st.write("Accuracy: " + str(ascore))
