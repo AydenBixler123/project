@@ -90,7 +90,7 @@ try:
      decision_tree_clf.fit(xtrain_normalized, ytrain)
      predictions = decision_tree_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
-     st.write("Accuracy:" + ascore)
+     st.write("Accuracy:" + str(ascore))
 	    
     #SVM
     elif "SVM" in selected_classifier:
@@ -98,7 +98,7 @@ try:
      SVC_clf.fit(xtrain_normalized, ytrain)
      predictions = SVC_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
-     st.write("Accuracy:" + ascore)
+     st.write("Accuracy:" + str(ascore))
 	     
     #Adaboost
     elif "Adaboost" in selected_classifier:
@@ -106,7 +106,7 @@ try:
      Adaboost_clf.fit(xtrain_normalized, ytrain)
      predictions = Adaboost_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
-     st.write("Accuracy:" + ascore)
+     st.write("Accuracy:" + str(ascore))
 	    
     #RandomForest
     else:
@@ -114,7 +114,7 @@ try:
      RandomForest_clf.fit(xtrain_normalized, ytrain)
      predictions = RandomForest_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
-     st.write("Accuracy:" + ascore)
+     st.write("Accuracy:" + str(ascore))
      pass
 
 	
