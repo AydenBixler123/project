@@ -14,8 +14,6 @@ try:
     from sklearn.model_selection import cross_val_score
     from sklearn import metrics
     from sklearn.metrics import accuracy_score
-    from sklearn.metrics import precision_score
-    from sklearn.metrics import recall_score
     
 	
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
@@ -92,6 +90,7 @@ try:
      decision_tree_clf.fit(xtrain_normalized, ytrain)
      predictions = decision_tree_clf.predict(xtest_normalized)
      ascore = accuracy_score(ytest, predictions)
+     pscore = cross_val_score(decision_tree_clf, xtest_normalized, ytest, scoring='precision')
 	    
     #SVM
     elif "SVM" in selected_classifier:
@@ -116,6 +115,7 @@ try:
      pass
 	    
     st.write("Accuracy: " + str(ascore))
+    st.write("Precision: " + str(pscore.mean()))
 	
 except ValueError as ve:
     print("")
