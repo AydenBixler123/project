@@ -89,31 +89,34 @@ try:
      decision_tree_clf = DecisionTreeClassifier(min_samples_split=min_samples_split, max_depth=max_depth, max_features=max_features)
      decision_tree_clf.fit(xtrain_normalized, ytrain)
      predictions = decision_tree_clf.predict(xtest_normalized)
-     score = accuracy_score(ytest, predictions)
+     ascore = accuracy_score(ytest, predictions)
+     st.write("Accuracy:" + ascore)
 	    
     #SVM
     elif "SVM" in selected_classifier:
      SVC_clf = SVC(C=C, shrinking=shrinking, probability=probability)
      SVC_clf.fit(xtrain_normalized, ytrain)
      predictions = SVC_clf.predict(xtest_normalized)
-     score = accuracy_score(ytest, predictions)
+     ascore = accuracy_score(ytest, predictions)
+     st.write("Accuracy:" + ascore)
 	     
     #Adaboost
     elif "Adaboost" in selected_classifier:
      Adaboost_clf = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
      Adaboost_clf.fit(xtrain_normalized, ytrain)
      predictions = Adaboost_clf.predict(xtest_normalized)
-     score = accuracy_score(ytest, predictions)
+     ascore = accuracy_score(ytest, predictions)
+     st.write("Accuracy:" + ascore)
 	    
     #RandomForest
     else:
      RandomForest_clf = RandomForestClassifier(n_estimators=n_estimators, min_samples_leaf=min_samples_leaf, max_depth=max_depth)
      RandomForest_clf.fit(xtrain_normalized, ytrain)
      predictions = RandomForest_clf.predict(xtest_normalized)
-     score = accuracy_score(ytest, predictions)
+     ascore = accuracy_score(ytest, predictions)
+     st.write("Accuracy:" + ascore)
      pass
 
-    st.write("Accuracy:" + score)
 	
 except ValueError as ve:
     print("")
