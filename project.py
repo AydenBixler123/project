@@ -101,24 +101,11 @@ try:
 
     ##Decision Tree
     if "Decision Tree" in selected_classifier:
-     pipe = Pipeline([
-        ('scaler', StandardScaler()),
-        ('selector', VarianceThreshold()),
-        ('classifier', DecisionTreeClassifier())
-        ])
-	    
-     #pipe.fit(xtrain_normalized, ytrain)
-	    
-     parameters = {
-      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	'selector__threshold': [0, 0.001, 0.01],
-	'classifier__min_samples_split': min_samples_split,
-      	'classifier__max_depth': max_depth,
-	'classifier__max_features': max_features
-    	}
-	    
-     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
-	
+     decision_tree_clf = DecisionTreeClassifier(min_samples_split=min_samples_split, max_depth=max_depth, max_features=max_features)
+     decision_tree_clf.fit(xtrain_normalized, ytrain)
+     predictions = decision_tree_clf.predict(xtest_normalized)
+     score = accuracy_score(y_test, predictions)
+     st.write(score)	
     #SVM
     elif "SVM" in selected_classifier:
      pipe = Pipeline([
@@ -127,7 +114,7 @@ try:
         ('classifier', SVC())
         ])
 
-     #pipe.fit(xtrain_normalized, ytrain)
+     pipe.fit(xtrain_normalized, ytrain)
     
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
@@ -136,8 +123,6 @@ try:
       	'classifier__shrinking': shrinking,
         'classifier__probability': probability
     	}
-
-     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 
 	
     #Adaboost
@@ -148,7 +133,7 @@ try:
         ('classifier', AdaBoostClassifier())
         ])
 
-     #pipe.fit(xtrain_normalized, ytrain)
+     pipe.fit(xtrain_normalized, ytrain)
     
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
@@ -156,8 +141,6 @@ try:
 	'classifier__n_estimators': n_estimators,
       	'classifier__learning_rate': learning_rate
     	}
-
-     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 
 	
     #RandomForest
@@ -168,7 +151,7 @@ try:
         ('classifier', RandomForestClassifier())
         ])
 
-     #pipe.fit(xtrain_normalized, ytrain)
+     pipe.fit(xtrain_normalized, ytrain)
     
      parameters = {
       	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
@@ -177,8 +160,6 @@ try:
       	'classifier__min_samples_leaf': min_samples_leaf,
         'classifier__max_depth': max_depth
     	}
-
-     grid = GridSearchCV(pipe, parameters, cv=2).fit(xtrain_normalized, ytrain)
 	    
      pass
 	
