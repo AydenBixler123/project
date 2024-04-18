@@ -5,7 +5,6 @@ try:
     from sklearn.preprocessing import StandardScaler
     from sklearn.neighbors import KNeighborsClassifier
     from sklearn.feature_selection import VarianceThreshold
-    from sklearn.pipeline import Pipeline
     from sklearn.preprocessing import Normalizer, StandardScaler, MinMaxScaler, PowerTransformer, MaxAbsScaler, LabelEncoder
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.tree import DecisionTreeClassifier
@@ -14,8 +13,7 @@ try:
     from sklearn.ensemble import AdaBoostClassifier
     from sklearn.model_selection import cross_val_score
     from sklearn import metrics
-    from sklearn.model_selection import GridSearchCV
-    from sklearn.metrics import accuracy_score, f1_score
+    from sklearn.metrics import accuracy_score
     
 	
     st.title("CIS 335 Project By: Ayden Bixler and Matthew Janatello")
@@ -104,7 +102,7 @@ try:
      decision_tree_clf = DecisionTreeClassifier(min_samples_split=min_samples_split, max_depth=max_depth, max_features=max_features)
      decision_tree_clf.fit(xtrain_normalized, ytrain)
      predictions = decision_tree_clf.predict(xtest_normalized)
-     score = accuracy_score(y_test, predictions)
+     score = accuracy_score(ytest, predictions)
      st.write(score)	
     #SVM
     elif "SVM" in selected_classifier:
