@@ -92,6 +92,7 @@ try:
      ascore = accuracy_score(ytest, predictions)
      pscore = cross_val_score(decision_tree_clf, xtest_normalized, ytest, scoring='precision')
      rscore = cross_val_score(decision_tree_clf, xtest_normalized, ytest, scoring='recall')
+     f2score = ((1+b**2)*pscore*rscore)/(b**2 * pscore + rscore)
 	    
     #SVM
     elif "SVM" in selected_classifier:
@@ -101,6 +102,7 @@ try:
      ascore = accuracy_score(ytest, predictions)
      pscore = cross_val_score(SVC_clf, xtest_normalized, ytest, scoring='precision')
      rscore = cross_val_score(SVC_clf, xtest_normalized, ytest, scoring='recall')
+     f2score = ((1+b**2)*pscore*rscore)/(b**2 * pscore + rscore)
 	     
     #Adaboost
     elif "Adaboost" in selected_classifier:
@@ -110,6 +112,7 @@ try:
      ascore = accuracy_score(ytest, predictions)
      pscore = cross_val_score(Adaboost_clf, xtest_normalized, ytest, scoring='precision')
      rscore = cross_val_score(Adaboost_clf, xtest_normalized, ytest, scoring='recall')
+     f2score = ((1+b**2)*pscore*rscore)/(b**2 * pscore + rscore)
 	    
     #RandomForest
     else:
@@ -119,11 +122,13 @@ try:
      ascore = accuracy_score(ytest, predictions)
      pscore = cross_val_score(RandomForest_clf, xtest_normalized, ytest, scoring='precision')
      rscore = cross_val_score(RandomForest_clf, xtest_normalized, ytest, scoring='recall')
+     f2score = ((1+b**2)*pscore*rscore)/(b**2 * pscore + rscore)
      pass
 	    
     st.write("Accuracy: " + str(ascore))
     st.write("Precision: " + str(pscore.mean()))
     st.write("Recall: " + str(rscore.mean()))
+    st.write("F2Score: " + str(f2score))
 	
 except ValueError as ve:
     print("")
