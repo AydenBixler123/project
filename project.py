@@ -83,34 +83,20 @@ try:
         xtest_normalized = xtest
     pass
 
-
-
-
-    #This is the output line were running into the issue with
-    #st.write(str(grid.score(xtrain_normalized, ytrain)))
-    #best_clf = grid.best_estimator_
-    #best_clf.fit(xtrain_normalized, y_train)
-    #y_pred = best_clf.predict(xtest_normalized)
-    #st.write("Accuracy: {:.2f}%".format(accuracy_score(y_test, y_pred) * 100))
-
-
-
-
-
+	
     ##Decision Tree
     if "Decision Tree" in selected_classifier:
      decision_tree_clf = DecisionTreeClassifier(min_samples_split=min_samples_split, max_depth=max_depth, max_features=max_features)
      decision_tree_clf.fit(xtrain_normalized, ytrain)
      predictions = decision_tree_clf.predict(xtest_normalized)
      score = accuracy_score(ytest, predictions)
-     st.write(score)	
+	    
     #SVM
     elif "SVM" in selected_classifier:
      SVC_clf = SVC(C=C, shrinking=shrinking, probability=probability)
      SVC_clf.fit(xtrain_normalized, ytrain)
      predictions = SVC_clf.predict(xtest_normalized)
      score = accuracy_score(ytest, predictions)
-     st.write(score)	
 	     
     #Adaboost
     elif "Adaboost" in selected_classifier:
@@ -118,7 +104,6 @@ try:
      Adaboost_clf.fit(xtrain_normalized, ytrain)
      predictions = Adaboost_clf.predict(xtest_normalized)
      score = accuracy_score(ytest, predictions)
-     st.write(score)
 	    
     #RandomForest
     else:
@@ -126,8 +111,9 @@ try:
      RandomForest_clf.fit(xtrain_normalized, ytrain)
      predictions = RandomForest_clf.predict(xtest_normalized)
      score = accuracy_score(ytest, predictions)
-     st.write(score)
      pass
+
+    st.write("Accuracy:" + score)
 	
 except ValueError as ve:
     print("")
