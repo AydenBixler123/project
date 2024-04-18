@@ -83,6 +83,7 @@ try:
         xtest_normalized = xtest
     pass
 
+    b=2
 	
     ##Decision Tree
     if "Decision Tree" in selected_classifier:
