@@ -114,22 +114,12 @@ try:
 	     
     #Adaboost
     elif "Adaboost" in selected_classifier:
-     pipe = Pipeline([
-        ('scaler', StandardScaler()),
-        ('selector', VarianceThreshold()),
-        ('classifier', AdaBoostClassifier())
-        ])
-
-     pipe.fit(xtrain_normalized, ytrain)
-    
-     parameters = {
-      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	'selector__threshold': [0, 0.001, 0.01],
-	'classifier__n_estimators': n_estimators,
-      	'classifier__learning_rate': learning_rate
-    	}
-
-	
+     Adaboost_clf = AdaBoostClassifier(n_estimators=n_estimators, learning_rate=learning_rate)
+     Adaboost_clf.fit(xtrain_normalized, ytrain)
+     predictions = Adaboost_clf.predict(xtest_normalized)
+     score = accuracy_score(ytest, predictions)
+     st.write(score)
+	    
     #RandomForest
     else:
      pipe = Pipeline([
