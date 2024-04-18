@@ -106,23 +106,12 @@ try:
      st.write(score)	
     #SVM
     elif "SVM" in selected_classifier:
-     pipe = Pipeline([
-        ('scaler', StandardScaler()),
-        ('selector', VarianceThreshold()),
-        ('classifier', SVC())
-        ])
-
-     pipe.fit(xtrain_normalized, ytrain)
-    
-     parameters = {
-      	'scaler': [StandardScaler(), MinMaxScaler(), Normalizer(), MaxAbsScaler()],
-	'selector__threshold': [0, 0.001, 0.01],
-	'classifier__C': C,
-      	'classifier__shrinking': shrinking,
-        'classifier__probability': probability
-    	}
-
-	
+     SVC_clf = SVC(C=C, shrinking=shrinking, probability=probability)
+     SVC_clf.fit(xtrain_normalized, ytrain)
+     predictions = SVC_clf.predict(xtest_normalized)
+     score = accuracy_score(ytest, predictions)
+     st.write(score)	
+	     
     #Adaboost
     elif "Adaboost" in selected_classifier:
      pipe = Pipeline([
